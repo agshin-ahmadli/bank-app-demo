@@ -24,9 +24,7 @@ public class AccountCustomImpl implements AccountCustomRepo{
 
       CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
       CriteriaQuery criteriaQuery = criteriaBuilder.createQuery(Account.class);
-
       Root<Account> accountRoot = criteriaQuery.from(Account.class);
-
       Predicate predicate = criteriaBuilder.like(accountRoot.get("accountHolderName"),"%" + name + "%");
       Predicate predicate1 = criteriaBuilder.equal(accountRoot.get("balance"),balance);
 
